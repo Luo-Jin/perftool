@@ -1,0 +1,38 @@
+INFO  [2021-01-14 21:31:21] Thu Jan 14 21:31:21 2021, HTTP code:200 - Successfully logon to Perfomance center.
+INFO  [2021-01-14 21:31:46] Thu Jan 14 21:31:46 2021, HTTP code:200 - Successfully get status from slotID:6714 Perfomance center.
+INFO  [2021-01-14 21:31:47] Thu Jan 14 21:31:47 2021, HTTP code:200 - Successfully get status from slotID:6715 Perfomance center.
+INFO  [2021-01-14 21:31:47] Thu Jan 14 21:31:47 2021, HTTP code:200 - Successfully get status from slotID:6716 Perfomance center.
+INFO  [2021-01-14 21:31:56] Thu Jan 14 21:31:56 2021, HTTP code:200 - Successfully get status from slotID:6720 Perfomance center.
+INFO  [2021-01-14 21:31:57] Thu Jan 14 21:31:57 2021, HTTP code:200 - Successfully get status from slotID:6718 Perfomance center.
+INFO  [2021-01-14 21:31:58] Thu Jan 14 21:31:58 2021, HTTP code:200 - Successfully get status from slotID:6719 Perfomance center.
+INFO  [2021-01-14 21:32:07] Thu Jan 14 21:32:07 2021, HTTP code:200 - Successfully get status from slotID:6714 Perfomance center.
+INFO  [2021-01-14 21:32:07] Thu Jan 14 21:32:07 2021, HTTP code:200 - Successfully get status from slotID:6715 Perfomance center.
+INFO  [2021-01-14 21:32:08] Thu Jan 14 21:32:08 2021, HTTP code:200 - Successfully get status from slotID:6716 Perfomance center.
+INFO  [2021-01-14 21:32:08] Thu Jan 14 21:32:08 2021, HTTP code:200 - Successfully get status from slotID:6720 Perfomance center.
+INFO  [2021-01-14 21:32:09] Thu Jan 14 21:32:09 2021, HTTP code:200 - Successfully get status from slotID:6718 Perfomance center.
+INFO  [2021-01-14 21:32:09] Thu Jan 14 21:32:09 2021, HTTP code:200 - Successfully get status from slotID:6719 Perfomance center.
+INFO  [2021-01-14 21:32:11] Thu Jan 14 21:32:11 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2693
+INFO  [2021-01-14 21:33:27] Thu Jan 14 21:33:27 2021, HTTP code:200 - Successfully get status from slotID:6714 Perfomance center.
+INFO  [2021-01-14 21:33:29] Thu Jan 14 21:33:29 2021, HTTP code:200 - Successfully get status from slotID:6715 Perfomance center.
+INFO  [2021-01-14 21:33:31] Thu Jan 14 21:33:31 2021, HTTP code:200 - Successfully get status from slotID:6716 Perfomance center.
+INFO  [2021-01-14 21:33:31] Thu Jan 14 21:33:31 2021, HTTP code:200 - Successfully get status from slotID:6720 Perfomance center.
+INFO  [2021-01-14 21:33:32] Thu Jan 14 21:33:32 2021, HTTP code:200 - Successfully get status from slotID:6718 Perfomance center.
+INFO  [2021-01-14 21:33:32] Thu Jan 14 21:33:32 2021, HTTP code:200 - Successfully get status from slotID:6719 Perfomance center.
+INFO  [2021-01-14 21:33:34] Thu Jan 14 21:33:34 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2693
+INFO  [2021-01-14 21:34:15] Thu Jan 14 21:34:15 2021, HTTP code:200 - Successfully retrieve the report for resultID=12766
+INFO  [2021-01-14 21:34:18] Thu Jan 14 21:34:18 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2694
+INFO  [2021-01-14 21:34:33] Thu Jan 14 21:34:33 2021, HTTP code:200 - Successfully retrieve the report for resultID=12773
+INFO  [2021-01-14 21:34:34] Thu Jan 14 21:34:34 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2695
+INFO  [2021-01-14 21:35:12] Thu Jan 14 21:35:12 2021, HTTP code:200 - Successfully retrieve the report for resultID=12778
+INFO  [2021-01-14 21:35:12] Thu Jan 14 21:35:12 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2699
+INFO  [2021-01-14 21:36:00] Thu Jan 14 21:36:00 2021, HTTP code:200 - Successfully retrieve the report for resultID=12802
+INFO  [2021-01-14 21:36:01] Thu Jan 14 21:36:01 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2697
+INFO  [2021-01-14 21:36:20] Thu Jan 14 21:36:20 2021, HTTP code:200 - Successfully retrieve the report for resultID=12790
+INFO  [2021-01-14 21:36:20] Thu Jan 14 21:36:20 2021, HTTP code:200 - Successfully retrieve the reuslts for runID=2698
+INFO  [2021-01-14 21:36:30] Thu Jan 14 21:36:30 2021, HTTP code:200 - Successfully retrieve the report for resultID=12796
+INFO  [2021-01-14 21:38:35] Thu Jan 14 21:38:35 2021, HTTP code:200 - Successfully get status from slotID:6714 Perfomance center.
+INFO  [2021-01-14 21:38:35] Thu Jan 14 21:38:35 2021, HTTP code:200 - Successfully get status from slotID:6715 Perfomance center.
+INFO  [2021-01-14 21:38:35] Thu Jan 14 21:38:35 2021, HTTP code:200 - Successfully get status from slotID:6716 Perfomance center.
+INFO  [2021-01-14 21:38:39] Thu Jan 14 21:38:39 2021, HTTP code:200 - Successfully get status from slotID:6720 Perfomance center.
+INFO  [2021-01-14 21:38:39] Thu Jan 14 21:38:39 2021, HTTP code:200 - Successfully get status from slotID:6718 Perfomance center.
+INFO  [2021-01-14 21:38:45] Thu Jan 14 21:38:45 2021, HTTP code:200 - Successfully get status from slotID:6719 Perfomance center.

@@ -158,7 +158,7 @@ extractMetrics <- function(runID)
 extractElapse <- function(runID)
 {
   # read the results from xls file 
-  filename <- paste("./tmp/",runID,".xls",sep="")
+  filename <- paste("data/",runID,".xls",sep="")
   if(file.exists(filename))
   { 
     # get results from downloaded xls
@@ -341,7 +341,7 @@ metrics <- function(filename=NULL)
   }
   row.names(df)<-NULL
   
-  if (!is.null(filename))
+  if (!is.null())
   {
     print(df)
     l<-list(df)
@@ -562,7 +562,7 @@ get_report <- function(r)
   xmlnode <- read_xml(cs)
   runID    <- as.numeric(as_list(xml_find_all(xmlnode,"(//RunID/text())[1]")))
   resultID <- as.numeric(as_list(xml_find_all(xmlnode,"//RunResult/ID[contains(following-sibling::Name/text(),'HighLevelReport')]/text()")))
-  filename <- paste("./tmp/",runID,".xls",sep="")
+  filename <- paste("data/",runID,".xls",sep="")
   url <- paste(perf.job.url,"/",runID,"/Results/",resultID,"/data",sep="")
   r <- GET(url, set_cookies("LWSSO_COOKIE_KEY"=perf.LWSSO.cookie,"QCSession"=perf.QCsession.cookie) )
   

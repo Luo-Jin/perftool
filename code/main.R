@@ -6,7 +6,7 @@
 args <- commandArgs(trailingOnly = T)
 #setwd("C:\\Users\\scnjil\\Documents\\RStudio\\project\\datacollector")
 options(width=400,warn=-1)
-source('functions.R')
+source('code/functions.R')
 
 #############################################################
 ##

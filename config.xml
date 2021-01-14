@@ -2,7 +2,7 @@
 <test name="id_viya4_internal">
   <platform>viya4</platform>
   <version> 2020.0.6 </version>
-  <logfile>mm_viya4_perf.log</logfile>
+  <logfile>log/mm_viya4_perf.log</logfile>
   <perf_center>
     <host>almrwc1848p-pcs.saas.microfocus.com</host>
     <credentialBase64>c2NuamlsOkknbTFHb29meQ==</credentialBase64>
@@ -12,15 +12,23 @@
     <cookies>
       <cookie>
         <name>LWSSO_COOKIE_KEY</name>
-        <value>kY7plJZEXStTDqFnTYX3sszdtJ1V5Rg9kiiXLHRzMjGEJfLMtAixVRNeXn_iAFgv-46FdtXpsLa7aQpZQkCrhA..</value>
+        <value>_5UtohVDLXlVpuv7WLHE-u5IYwyTJIxcOyl4c_LmgH3gQg69MOa0UwnMqkvcZoFgQkTru9DkOeTVjk5pqh41Sw..</value>
       </cookie>
       <cookie>
         <name>QCSession</name>
-        <value>MTQ5OTY1ODY7S21IZnhmcVFabGFOYUlzakxBMG5ldyoqO1BDIFJFU1QgQVBJIENsaWVudDsgOyA7IA..</value>
+        <value>MTUwMzc4NDE7Tkk0Z1h5dXZSdHBVM2NkRFFOMWZGUSoqO1BDIFJFU1QgQVBJIENsaWVudDsgOyA7IA..</value>
       </cookie>
       <cookie>
         <name>secured_cookie</name>
-        <value>!3irAVOl1I5ZOIM98XefSSEbsJ+ZE95JZjXqEFHvYFBFD/cjhmzWKnJgaSMM72nJHc/dC9/3k4riL5Rg=</value>
+        <value>!f0vGKkuVaM6Q0FF8XefSSEbsJ+ZE9y70ytYzElKBr0mpt4rTucLrE1JQfqDn9oSFCWEW6ihero6hOpM=</value>
+      </cookie>
+      <cookie>
+        <name>.ASPXAUTH</name>
+        <value>96328523B72B4B0B8167FEC8DD68ECF935A0D6C3204484C683233AF4AF24387096D4ABD2AA4DE7211D31A6693FAC6A3B4FC404CDAD0EF4824FE7C0631D31FD4ED9E7E861022EF09F69F5C40B16DEBAE513A623044E056A7379180C8F037F3673D325BFA5528FFB1DFFC6DB1A775B876267E34A460A222C7EE128F343EE1382C7</value>
+      </cookie>
+      <cookie>
+        <name>LoginClient</name>
+        <value>qc</value>
       </cookie>
     </cookies>
   </perf_center>
@@ -46,7 +54,7 @@
       <con>200</con>
       <runID>2693</runID>
       <slotID>6714</slotID>
-      <start>2021-01-07 21:33:37</start>
+      <start>2021-01-08 10:33:37</start>
       <status>Finished</status>
       <desc>test2_t100_32core</desc>
     </iteration>
@@ -57,7 +65,7 @@
       <con>300</con>
       <runID>2694</runID>
       <slotID>6715</slotID>
-      <start>2021-01-07 22:04:07</start>
+      <start>2021-01-08 11:04:07</start>
       <status>Finished</status>
       <desc>test2_t100_32core</desc>
     </iteration>
@@ -68,7 +76,7 @@
       <con>400</con>
       <runID>2695</runID>
       <slotID>6716</slotID>
-      <start>2021-01-07 22:34:37</start>
+      <start>2021-01-08 11:34:37</start>
       <status>Finished</status>
       <desc>test2_t100_32core</desc>
     </iteration>
@@ -79,7 +87,7 @@
       <con>200</con>
       <runID>2699</runID>
       <slotID>6720</slotID>
-      <start>2021-01-08 01:56:00</start>
+      <start>2021-01-08 14:56:00</start>
       <status>Finished</status>
       <desc>test2_t100_16core</desc>
     </iteration>
@@ -90,7 +98,7 @@
       <con>300</con>
       <runID>2697</runID>
       <slotID>6718</slotID>
-      <start>2021-01-08 01:15:51</start>
+      <start>2021-01-08 14:15:51</start>
       <status>Finished</status>
       <desc>test2_t100_16core</desc>
     </iteration>
@@ -101,7 +109,7 @@
       <con>400</con>
       <runID>2698</runID>
       <slotID>6719</slotID>
-      <start>2021-01-08 01:37:00</start>
+      <start>2021-01-08 14:37:00</start>
       <status>Finished</status>
       <desc>test2_t100_16core</desc>
     </iteration>
