@@ -341,7 +341,7 @@ metrics <- function(filename=NULL)
   }
   row.names(df)<-NULL
   
-  if (!is.null(df))
+  if (!is.null(filename))
   {
     print(df)
     l<-list(df)
