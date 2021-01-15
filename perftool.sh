@@ -1,7 +1,7 @@
 p1=$1
-workpalce=`pwd`
+workplace=`pwd`
 container_name=`hostname -s`${workplace//\//_}
-
+echo $container_name
 if [ ! $p1 ] ; then
    p1="login"
 fi
