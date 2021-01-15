@@ -2,6 +2,7 @@
 
 workspace=`pwd`
 container_name=`hostname -s`${workspace//\//_}
+
 n=`sudo docker image ls | grep scnjil/perftool | wc -l`
 
 if [ $n -lt 1 ]; then
