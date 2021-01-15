@@ -1,7 +1,8 @@
 p1=$1
 workpalce=`pwd`
+container_name=${workplace//\//_}
 
 if [ ! $p1 ] ; then
    p1="login"
 fi
- sudo docker exec -it $workpalce Rscript code/main.R $p1 $2 $3
+ sudo docker exec -it $container_name Rscript code/main.R $p1 $2 $3

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-workpalce=`pwd`
+workplace=`pwd`
+container_name=${workplace//\//_}
 n=`sudo docker image ls | grep scnjil/perftool | wc -l`
 
 if [ $n -lt 1 ]; then
@@ -8,13 +9,13 @@ if [ $n -lt 1 ]; then
 fi
 
 if [ 'start' = $1 ]; then
-   sudo docker run -itd -v $workplace:/tmp1 -w /tmp1 --rm --name=$workplace scnjil/perftool:v2 bash
+   sudo docker run -itd -v $workplace:/tmp1 -w /tmp1 --rm --name=$container_name scnjil/perftool:v2 bash
 fi
 
 if [ 'stop' = $1 ]; then
-   sudo docker container stop $workpalce
+   sudo docker container stop $container_name
 fi
 
 if [ 'status' = $1 ]; then
-   sudo docker ps | grep $workpalce
+   sudo docker ps | grep $container_name
 fi
