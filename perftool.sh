@@ -1,6 +1,6 @@
 p1=$1
-workpalce=`pwd`
-container_name=${workplace//\//_}
+workspace=`pwd`
+container_name=`hostname -s`${workspace//\//_}
 
 if [ ! $p1 ] ; then
    p1="login"

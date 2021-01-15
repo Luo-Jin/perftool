@@ -1,7 +1,7 @@
 #!/bin/bash
 
-workplace=`pwd`
-container_name=${workplace//\//_}
+workspace=`pwd`
+container_name=`hostname -s`${workspace//\//_}
 n=`sudo docker image ls | grep scnjil/perftool | wc -l`
 
 if [ $n -lt 1 ]; then
@@ -9,7 +9,7 @@ if [ $n -lt 1 ]; then
 fi
 
 if [ 'start' = $1 ]; then
-   sudo docker run -itd -v $workplace:/tmp1 -w /tmp1 --rm --name=$container_name scnjil/perftool:v2 bash
+   sudo docker run -itd -v $workspace:/tmp1 -w /tmp1 --rm --name=$container_name scnjil/perftool:v2 bash
 fi
 
 if [ 'stop' = $1 ]; then
