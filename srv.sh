@@ -1,7 +1,7 @@
 #!/bin/bash
 
 workplace=`pwd`
-container_name=${workplace//\//_}
+container_name=`hostname -s`${workplace//\//_}
 n=`sudo docker image ls | grep scnjil/perftool | wc -l`
 
 if [ $n -lt 1 ]; then
