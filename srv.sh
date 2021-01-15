@@ -4,6 +4,7 @@ workplace=`pwd`
 container_name=`hostname -s`${workplace//\//_}
 n=`sudo docker image ls | grep scnjil/perftool | wc -l`
 
+
 if [ $n -lt 1 ]; then
    sudo docker pull scnjil/perftool:v2
 fi
