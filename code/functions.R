@@ -380,26 +380,9 @@ elapse <- function(filename=NULL)
   
 }
 
-schedule <- function()
+schedule <- function(iters=NULL)
 {
-  iters <-NULL
-  
-  if (!is.na(args[2]))
-  {
-    
-    param <- strsplit(args[2],split = "-")
-    iters<-list("testID"=as.numeric(param[[1]][[1]]),
-                "instanceID"=as.numeric(param[[1]][[2]]),
-                "duration"=as.numeric(param[[1]][[3]]),
-                "con"=as.numeric(param[[1]][[4]]),
-                "runID"=NA,
-                "slotID"=NA,
-                "start"=ifelse(param[[1]][[5]]=="NA",NA,param[[1]][[5]]),
-                "status"="New",
-                "desc"=param[[1]][[6]]
-    )
-  }
-  
+
   if(!setSchedule(iters))
   {
     cat(paste("Scheddule test ",paste(names(iters),iters,sep=":",collapse = ",")," failed.\n\r"))

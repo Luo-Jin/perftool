@@ -163,7 +163,25 @@ if (args[1] == "elapse")
 
 if (args[1] == "schedule")
 {
-  schedule()
+  iters <-NULL
+  
+  if (!is.na(args[2]))
+  {
+    
+    param <- strsplit(args[2],split = "-")
+    iters<-list("testID"=as.numeric(param[[1]][[1]]),
+                "instanceID"=as.numeric(param[[1]][[2]]),
+                "duration"=as.numeric(param[[1]][[3]]),
+                "con"=as.numeric(param[[1]][[4]]),
+                "runID"=NA,
+                "slotID"=NA,
+                "start"=ifelse(param[[1]][[5]]=="NA",NA,param[[1]][[5]]),
+                "status"="New",
+                "desc"=param[[1]][[6]]
+    )
+  }
+  
+  schedule(iters)
   
 }
 
