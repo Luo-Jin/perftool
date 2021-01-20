@@ -4,10 +4,11 @@
   <version> 2020.0.6 </version>
   <logfile>log/mm_viya4_perf.log</logfile>
   <perf_center>
-    <host>almrwc1848p-pcs.saas.microfocus.com</host>
+    <host>lreorgprod1.saas.microfocus.com</host>
     <credentialBase64>c2NuamlsOkknbTFHb29meQ==</credentialBase64>
     <domain>SAS_PRODUCTION</domain>
     <project>EEC_Benchmarking</project>
+    <tenant>fd8028ee-3dd3-4236-9407-12f02e68dc6e</tenant>
     <timezone>EST5EDT</timezone>
     <cookies>
       <cookie>
