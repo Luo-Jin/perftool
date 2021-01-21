@@ -204,17 +204,22 @@ setSchedule <- function(iters=NULL)
   #loop the iterations and schedule the job
   for (i in 1:nrow(iterations))
   {
-    #if (is.na(iterations[i,"runID"]) && iterations[i,"status"]=="New")
-    if (iterations[i,"status"]=="New")
+    #if (iterations[i,"status"]=="New")
+    if (!is.na(iterations[i,"status"]) && iterations[i,"status"]=="New")
     {
       idx <- which(!is.na(iterations[,"start"]))
       if (length(idx)>0){
-        last_runtime <- convertTosec(iterations[idx,"start"] ) + ifelse(iterations[idx,"duration"]<1800,1800,iterations[idx,"duration"])
-        set_runtime  <- ifelse(is.na(convertTosec(iterations[i,"start"])),convertTosec(format(Sys.time())),convertTosec(iterations[i,"start"]))
-        start_time <- format(as.numeric(max(set_runtime,last_runtime,convertTosec(format(Sys.time())))) + as.POSIXct("1970-01-01 00:00:00",Sys.timezone()) + 30)
+        last_runtime <- convertTosec(iterations[idx,"start"] ) + 
+                        ifelse(iterations[idx,"duration"]<1800,1800,iterations[idx,"duration"])
+        set_runtime  <- ifelse(is.na(convertTosec(iterations[i,"start"])),
+                               convertTosec(format(Sys.time())),
+                               convertTosec(iterations[i,"start"]))
+        start_time <- format(as.numeric(max(set_runtime,last_runtime,convertTosec(format(Sys.time())))) + 
+                               as.POSIXct("1970-01-01 00:00:00",Sys.timezone()) + 
+                               120)
       } else
       {
-        start_time <- format(as.numeric(convertTosec(format(Sys.time()))) + as.POSIXct("1970-01-01 00:00:00",Sys.timezone()) + 30)
+        start_time <- format(as.numeric(convertTosec(format(Sys.time()))) + as.POSIXct("1970-01-01 00:00:00",Sys.timezone()) + 120)
       }
       test_name  <- paste(global.tests,"_",global.version,"_",iterations[i,"desc"],"_",iterations[i,"con"],"U",sep="")
      
@@ -233,6 +238,9 @@ setSchedule <- function(iters=NULL)
       xml<-read_xml(cs)
       slotID   <- as.numeric(as_list(xml_find_all(xml,"/Timeslot/ID/text()")))
       status   <- as.character(xml_find_all(xml,"/Timeslot/CurrentRunState/text()"))
+      if(length(status)==0){
+        status<-NA
+      }
       iterations[i,"slotID"] <<- slotID
       iterations[i,"start"]  <<- start_time
       iterations[i,"status"] <<- status
@@ -269,14 +277,22 @@ updateStatus <- function(slotIDs=iterations[,"slotID"])
               start    <- as.character(as_list(xml_find_all(xml,"//StartTime/text()")))
               start    <- gsub("T"," ",start)
               start    <- gsub("\\+00","",start)
-              start    <- zoneTozone(start,"Europe/London",Sys.timezone())
+              #start    <- zoneTozone(start,"Europe/London",Sys.timezone())
+              start    <- zoneTozone(start,perf.timezone,Sys.timezone())
               start    <- format(as.POSIXct(start))  
               duration <- as.numeric(as_list(xml_find_all(xml,"//DurationInMinutes/text()")))*60
               testID   <- as.numeric(as_list(xml_find_all(xml,"//LoadTestID/text()")))
               instanceID <- as.numeric(as_list(xml_find_all(xml,"//LoadTestInstanceID/text()")))
               runID <- as.numeric(as_list(xml_find_all(xml,"//CurrentRunId/text()")))
+              if (length(runID) == 0)
+              {
+                runID <- NA
+              }
               status <- as.character(as_list(xml_find_all(xml,"//CurrentRunState/text()")))
-              
+              if (length(status) == 0)
+              {
+                status <- NA
+              }         
               
               iterations[which(iterations$slotID==slotID),"testID"]     <<-testID
               iterations[which(iterations$slotID==slotID),"instanceID"] <<-instanceID
@@ -421,7 +437,7 @@ login <- function()
     perf.QCsession.cookie <<- r$cookies$value[which(r$cookies$name=="QCSession")]
     info(global.info.logger,paste(date(),", HTTP code:",r$status_code," - Successfully logon to Perfomance center.",sep=""))
     
-    # write cookies into config file
+    # spell xml string for cookies
     xml_str <- "<cookies>\r\n" 
     for (i in 1:nrow(r$cookies))
     {
@@ -431,13 +447,15 @@ login <- function()
       xml_str <- paste(xml_str," </cookie>\r\n",sep="")
     }
     xml_str <- paste(xml_str," </cookies>\r\n",sep="")
-    perf.cookies <<- read_xml(xml_str)
     
-    if (length(xml_children(xml_children(config)[[4]]))==6)
-    {
-      xml_remove(xml_children(xml_children(config)[[4]])[[6]])# remove the iterations node from config
-    }
-    xml_add_child(xml_children(config)[[4]],perf.cookies)# insert a new iterations node into config
+    
+    # remove old cookies
+    old_cookies<-xml_find_all(config,"//cookies")
+    xml_remove(old_cookies)
+    # append new cookies under perf_center node
+    perf.cookies <<- read_xml(xml_str)
+    perf_node<-xml_find_all(config,"//perf_center")
+    xml_add_child(perf_node,perf.cookies)
     write_xml(config,"config.xml")
 
   }else
@@ -479,12 +497,13 @@ create_timeslot <- function(startTime,duration,testName,user,instanceID)
 {
   con <- user -1
   time <- zoneTozone(startTime,Sys.timezone(),perf.timezone)
+  time <- paste(gsub(" ","T",time),"+00",sep="")
   timeslotXML <- paste("<Timeslot xmlns='http://www.hp.com/PC/REST/API'>
   <StartTime>",time,"</StartTime>
   <DurationInMinutes>",duration,"</DurationInMinutes>
   <Name>",testName,"</Name>
   <Demands><ControllerDemandAutomatic/></Demands>
-  <VusersNumber>0</VusersNumber>
+  <VusersNumber>10</VusersNumber>
   <VudsNumber>0</VudsNumber>
   <PostRunAction>CollateAnalyze</PostRunAction>
   <LoadTestInstanceID>",instanceID,"</LoadTestInstanceID>
